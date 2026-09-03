@@ -1,3 +1,2 @@
 // Vitest test environment setup
-
-export {};
+process.env.DATABASE_PATH = ":memory:";
