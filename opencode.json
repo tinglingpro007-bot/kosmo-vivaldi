@@ -1,0 +1,50 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "plugin": [
+    "@dietrichgebert/ponytail"
+  ],
+  "mcp": {
+    "kosmo-context": {
+      "type": "remote",
+      "url": "http://backend:8000/mcp",
+      "environment": {
+        "KOSMO_PROJECT_ID": "prj_01M1MF8TWSSC7XYE798AK8ETDY"
+      }
+    },
+    "token-savior": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--from",
+        "token-savior-recall",
+        "token-savior"
+      ],
+      "environment": {
+        "WORKSPACE_ROOTS": "/workspaces/prj_01M1MF8TWSSC7XYE798AK8ETDY",
+        "TOKEN_SAVIOR_CLIENT": "opencode",
+        "TOKEN_SAVIOR_PROFILE": "optimized"
+      }
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  },
+  "permission": {
+    "read": {
+      "*": "allow"
+    },
+    "edit": {
+      "*": "allow"
+    },
+    "bash": {
+      "*": "allow"
+    }
+  },
+  "tools": {
+    "question": false
+  }
+}
